@@ -1,10 +1,11 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from './../../logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import logo from './../../logo.svg'
+import CartWidgetComponent from './../CartWidget'
 
-function NavbarComponent() {
+const NavbarComponent = () => {
   return (
     <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top px-5">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top px-5">
             <a className="navbar-brand" href="#">
                 <img src={logo} width="40" height="40" className="d-inline-block align-middle" alt="logo"/> Curso ReactJS
             </a>
@@ -27,9 +28,10 @@ function NavbarComponent() {
                 </li>
                 </ul>
             </div>
+            <CartWidgetComponent />
         </nav>
     </div>
-  );
+  )
 }
 
-export default NavbarComponent;
+export default NavbarComponent
