@@ -6,12 +6,12 @@ import ItemListContainer from './containers/ItemListContainer'
 function App() {
   return (
     <div className="App">
-      <header>
+      <div className="header">
         <NavbarComponent/>
-      </header>
-      <body>
-        <ItemListContainer greeting={`Bienvenidos al Container`} />
-      </body>
+      </div>
+      <div className="body">
+        <ItemListContainer greeting="Bienvenidos al Container" />
+      </div>
     </div>
   )
 }
