@@ -22,7 +22,7 @@ const ItemCountComponent = ({stock}) => {
                         <div className="input-group-prepend">
                             <button className="btn btn-outline-primary" type="button" onClick={() => {if (totalItem > 0) setTotalItem(totalItem-1)}}>-</button>
                         </div>
-                        <input type="text" className="form-control" placeholder={totalItem}/>
+                        <input type="number" className="form-control" value={totalItem} onChange={(e) => setTotalItem(e.target.value)} />
                         <div className="input-group-append">
                             <button className="btn btn-outline-primary" type="button" onClick={() => {if (totalItem < stock) setTotalItem(totalItem+1)}}>+</button>
                         </div>

@@ -10,7 +10,7 @@ function App() {
         <NavbarComponent/>
       </div>
       <div className="body">
-        <ItemListContainer greeting="Bienvenidos al Container" />
+        <ItemListContainer greeting="Estos son los productos disponibles" />
       </div>
     </div>
   )
