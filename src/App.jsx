@@ -1,7 +1,8 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import NavbarComponent from './components/NavBar'
 import ItemListContainer from './containers/ItemListContainer'
+import ItemDetailContainer from './containers/ItemDetailContainer'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       </div>
       <div className="body">
         <ItemListContainer greeting="Estos son los productos disponibles" />
+        <ItemDetailContainer />
       </div>
     </div>
   )
