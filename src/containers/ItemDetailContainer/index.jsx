@@ -1,24 +1,34 @@
 import React, { useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom'
 import ItemDetailComponent from '../../components/ItemDetail'
-import productDetail from '../../mocks/productDetail'
+import productList from '../../mocks/productList'
 
 const ItemDetailContainer = () => {
 
     const [product, setProduct] = useState({})
+    const {itemId} = useParams()
 
     useEffect( () => {
         
-        const loadProductDetail = new Promise ((resolve, reject) => {
-            setTimeout(() => resolve(productDetail), 2000);
+        const loadProductList = new Promise ((resolve, reject) => {
+            setTimeout(() => {
+                resolve(productList)
+            }, 200);
         })
-        loadProductDetail.then((result) => setProduct(result))
+        
+        loadProductList.then((database) => {
+            
+            const selectedProduct = database.find((e) => e.name === itemId)
+            setProduct(selectedProduct)
+        
+        })
 
-    }, [])
+    }, [itemId])
 
     return (
         <>
             <h2>Detalle del Producto</h2>
-            <ItemDetailComponent product={product}/>
+            <ItemDetailComponent product={product} />
         </>
     )
 }
