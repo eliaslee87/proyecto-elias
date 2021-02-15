@@ -1,3 +1,23 @@
+# CoderHouse | Curso ReactJS - Proyecto Elias
+
+Este proyecto es el que se está desarrollando en el curso de ReactJS de CoderHouse, camada 11360.
+
+# Framework / Librerias Utilizadas
+
+Para este proyecto se utilizó ReactJS, NodeJS y se utilizó Bootstrap v4.6 para los estilos.
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
