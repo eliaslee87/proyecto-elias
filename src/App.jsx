@@ -19,6 +19,11 @@ function App() {
           <Route exact path="/item/:itemId">
             <ItemDetailContainer />
           </Route>
+          <Route path="*">
+            <div>
+              <h2>Error 404 - Página no encontrada</h2>
+            </div>
+          </Route>
         </Switch>
         
     </BrowserRouter>

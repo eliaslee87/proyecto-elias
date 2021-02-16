@@ -7,11 +7,13 @@ import './style.css'
 const ItemListContainer = () => {
 
     const [products, setProducts] = useState([])
+    const [loading, setIsloading] = useState(false)
+
     const {categoryId} = useParams()
 
 
     useEffect( () => {
-
+        setIsloading(true)
         const loadProductList = new Promise ((resolve, reject) => { 
             setTimeout(() => {
                 resolve(productList)
@@ -24,9 +26,30 @@ const ItemListContainer = () => {
             const result = (filterProductList.length === 0) ? database : filterProductList
 
             setProducts(result)
+            setIsloading(false)
         })
 
     }, [categoryId])
+
+
+    if (loading) {
+        return (
+        <>
+            <h2>Bienvenidos a la tienda ReactJS</h2>
+            <ul className="nav nav-pills justify-content-center mb-4">
+                <li className="nav-item">
+                    <NavLink to='/categoria/reactjs' className="nav-link text-dark" activeClassName="active bg-warning">ReactJS</NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink to='/categoria/bootstrap' className="nav-link text-dark" activeClassName="active bg-warning">Bootstrap</NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink to='/categoria/html5' className="nav-link text-dark" activeClassName="active bg-warning">HTML5</NavLink>
+                </li>
+            </ul>
+            <h3 className="text-center mt-5">Cargando listado de productos...</h3>
+        </>)
+    }
 
     return (
         <>

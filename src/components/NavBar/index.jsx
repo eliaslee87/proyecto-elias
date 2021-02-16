@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { NavLink } from 'react-router-dom'
-import logo from './../../logo.svg'
 import CartWidgetComponent from './../CartWidget'
 
 const NavbarComponent = () => {
@@ -8,7 +7,7 @@ const NavbarComponent = () => {
     <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top px-5">
             <a className="navbar-brand" href="/">
-                <img src={logo} width="40" height="40" className="d-inline-block align-middle" alt="logo"/> Curso ReactJS
+                <img src="/logo192.png" width="30" height="30" className="d-inline-block align-middle" alt="logo"/> Curso ReactJS
             </a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
