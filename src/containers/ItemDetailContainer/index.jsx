@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
         return (
             <>
                 <h2>Detalle del Producto</h2>
-                <h3 className="text-center mt-5">Cargando detalle de productos...</h3>
+                <img src="/images/loading.gif" className="mt-5 mx-auto d-block" alt="loading"/>
             </>
         )
     }

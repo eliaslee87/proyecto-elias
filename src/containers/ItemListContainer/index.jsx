@@ -47,7 +47,7 @@ const ItemListContainer = () => {
                     <NavLink to='/categoria/html5' className="nav-link text-dark" activeClassName="active bg-warning">HTML5</NavLink>
                 </li>
             </ul>
-            <h3 className="text-center mt-5">Cargando listado de productos...</h3>
+            <img src="/images/loading.gif" className="mt-5 mx-auto d-block" alt="loading"/>
         </>)
     }
 

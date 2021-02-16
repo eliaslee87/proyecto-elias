@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import NavbarComponent from './components/NavBar'
 import ItemListContainer from './containers/ItemListContainer'
 import ItemDetailContainer from './containers/ItemDetailContainer'
+import CartComponent from './components/Cart'
 
 function App() {
   return (
@@ -19,8 +20,11 @@ function App() {
           <Route exact path="/item/:itemId">
             <ItemDetailContainer />
           </Route>
+          <Route exact path="/cart">
+            <CartComponent />
+          </Route>
           <Route path="*">
-            <div>
+            <div className="mt-5">
               <h2>Error 404 - Página no encontrada</h2>
             </div>
           </Route>

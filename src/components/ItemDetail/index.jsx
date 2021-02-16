@@ -1,6 +1,11 @@
 import ItemCountComponent from '../ItemCount'
+import { Link } from 'react-router-dom'
 
 const ItemDetailComponent = ({product}) => {
+
+    const onAdd = (contador) => {
+        console.log(`Se agregaron ${contador} unidades`)
+    }
 
     return (
         <div className="container">
@@ -16,8 +21,10 @@ const ItemDetailComponent = ({product}) => {
                             <h6 className="card-subtitle mb-2 text-secondary">Stock: {product.stock}</h6>
                             <h6 className="card-subtitle mb-2 text-muted">Tutor: {product.seller}</h6>
                             <p className="card-text my-4">{product.description}</p>
-                            <ItemCountComponent product={product} />
-                            <button className="btn btn-primary btn-block" type="button">Comprar</button>
+                            <ItemCountComponent product={product} onAdd={onAdd}/>
+                            <Link to="/cart">
+                                <button className="btn btn-primary btn-block" type="button">Comprar</button>
+                            </Link>
                         </div>
                     </div>
                 </div>
