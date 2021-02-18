@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './style.css'
-const ItemCountComponent = ({product}, {onAdd}) => {
 
+const ItemCountComponent = (props) => {
+    
     const [counterNumber, setCounterNumber] = useState(1)
-    const itemStock = product.stock
+    const itemStock = props.product.stock
     
     const removeItem = () => {
         if (counterNumber > 1) {setCounterNumber(counterNumber-1)}
@@ -23,6 +24,10 @@ const ItemCountComponent = ({product}, {onAdd}) => {
         }
     }
 
+    const onAddHandler = () => {
+        props.onAdd(counterNumber)
+    }
+
 
     return (    
         <div className="input-group mb-3">
@@ -33,6 +38,7 @@ const ItemCountComponent = ({product}, {onAdd}) => {
             <div className="input-group-append">
                 <button className="btn btn-outline-primary" type="button" onClick={addItem}>+</button>
             </div>
+            <button className="btn btn-primary btn-block mt-3" type="button" onClick={onAddHandler}>Agregar a Carrito</button>
         </div>
     )
 
