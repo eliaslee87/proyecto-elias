@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import CartWidgetComponent from './../CartWidget'
 
 const NavbarComponent = () => {
+
   return (
     <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top px-5">
