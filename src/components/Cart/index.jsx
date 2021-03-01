@@ -10,9 +10,10 @@ const CartComponent = () => {
         return prev + (cur.quantity*cur.price)
     },0)
 
+    console.log(cart)
+
     return (
-        cart === [] ?
-        <>
+        cart.length === 0 ?
         <div>
             <div className="sticky-top bg-light">
                 <div className="row">
@@ -31,16 +32,15 @@ const CartComponent = () => {
                 <h5 className="mb-5 text-center">Su carrito esta vacio</h5>
                 <div className="row justify-content-end">
                     <Link to="/">
-                    <button className="btn btn-primary">Volver al Home</button>
+                        <button className="btn btn-primary" onClick={()=> setCartModal(false)}>Volver al Home</button>
                     </Link>
                 </div>
             </div>
         </div>
-        </>
 
         :
 
-        <>
+
         <div>
             <div className="sticky-top bg-light">
                 <div className="row">
@@ -87,7 +87,7 @@ const CartComponent = () => {
                 </div>
             </div>
         </div>
-        </>
+
     )
 }
 
