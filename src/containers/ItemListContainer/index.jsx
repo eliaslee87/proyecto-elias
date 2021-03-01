@@ -41,15 +41,12 @@ const ItemListContainer = () => {
         <>
         <h2>Bienvenidos a la tienda ReactJS</h2>
             <ul className="nav nav-pills justify-content-center mb-4">
-<<<<<<< HEAD
                 <li className="nav-item">
                     <NavLink to='/categoria/bootstrap' className="nav-link text-dark" activeClassName="active bg-warning">Bootstrap</NavLink>
                 </li>
                 <li className="nav-item">
                     <NavLink to='/categoria/html5' className="nav-link text-dark" activeClassName="active bg-warning">HTML5</NavLink>
                 </li>
-=======
->>>>>>> 945e050e2e688d7e30a0725e4e01293a55642d81
                 <li className="nav-item">
                     <NavLink to='/categoria/reactjs' className="nav-link text-dark" activeClassName="active bg-warning">ReactJS</NavLink>
                 </li>
