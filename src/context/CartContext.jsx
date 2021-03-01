@@ -4,6 +4,8 @@ export const CartContext = createContext([])
 
 export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
+    const [cartModal, setCartModal] = useState(false)
+    
     const [currentProductID, setCurrentProductID] = useState()
 
     const productExists = cart.find(e => e.id === currentProductID) ? true : false
@@ -23,11 +25,8 @@ export const CartProvider = ({children}) => {
         setCart(cart.filter(product => product.id !== id))
     }
 
-    const emptyCart = () => setCart([])
-
     
-
-    return <CartContext.Provider value={{cart, setCart, currentProductID, setCurrentProductID, productExists, addProduct, removeProduct, emptyCart}}>
+    return <CartContext.Provider value={{cart, setCart, currentProductID, setCurrentProductID, productExists, addProduct, removeProduct, cartModal, setCartModal}}>
         {children}
     </CartContext.Provider>
 

@@ -31,29 +31,9 @@ const ItemListContainer = () => {
 
     }, [categoryId])
 
-
-    if (loading) {
-        return (
-        <>
-            <h2>Bienvenidos a la tienda ReactJS</h2>
-            <ul className="nav nav-pills justify-content-center mb-4">
-                <li className="nav-item">
-                    <NavLink to='/categoria/reactjs' className="nav-link text-dark" activeClassName="active bg-warning">ReactJS</NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink to='/categoria/bootstrap' className="nav-link text-dark" activeClassName="active bg-warning">Bootstrap</NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink to='/categoria/html5' className="nav-link text-dark" activeClassName="active bg-warning">HTML5</NavLink>
-                </li>
-            </ul>
-            <img src="/images/loading.gif" className="mt-5 mx-auto d-block" alt="loading"/>
-        </>)
-    }
-
     return (
         <>
-            <h2>Bienvenidos a la tienda ReactJS</h2>
+        <h2>Bienvenidos a la tienda ReactJS</h2>
             <ul className="nav nav-pills justify-content-center mb-4">
                 <li className="nav-item">
                     <NavLink to='/categoria/reactjs' className="nav-link text-dark" activeClassName="active bg-warning">ReactJS</NavLink>
@@ -65,11 +45,9 @@ const ItemListContainer = () => {
                     <NavLink to='/categoria/html5' className="nav-link text-dark" activeClassName="active bg-warning">HTML5</NavLink>
                 </li>
             </ul>
-            
-            <ItemListComponent products={products}/>
-        </> 
+            {loading ? <img src="/images/loading.gif" className="mt-5 mx-auto d-block" alt="loading"/> : <ItemListComponent products={products}/>}
+        </>
     )
-    
 }
 
 export default ItemListContainer

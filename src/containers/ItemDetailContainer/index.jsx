@@ -27,21 +27,15 @@ const ItemDetailContainer = () => {
 
     }, [itemId])
 
-    if (loading) {
-        return (
-            <>
-                <h2>Detalle del Producto</h2>
-                <img src="/images/loading.gif" className="mt-5 mx-auto d-block" alt="loading"/>
-            </>
-        )
-    }
 
     return (
         <>
             <h2>Detalle del Producto</h2>
-            <ItemDetailComponent product={product} />
+            {loading ? <img src="/images/loading.gif" className="mt-5 mx-auto d-block" alt="loading"/> : <ItemDetailComponent product={product} />}
         </>
+
     )
+
 }
 
 export default ItemDetailContainer
