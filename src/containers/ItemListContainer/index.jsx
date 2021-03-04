@@ -16,15 +16,15 @@ const ItemListContainer = () => {
         const fsDB = getFirestore()
         const productList = fsDB.collection("Items")
 
-        const loadProductList = new Promise ((resolve, reject) => {
-            
-            resolve(productList.get().then((value) => {
-                let aux = value.docs.map(e => {
-                    return {...e.data(), id: e.id}
+        const loadProductList =
+            new Promise((resolve, reject) => {
+                productList.get().then((value) => {
+                    let aux = value.docs.map(e => {
+                        return { ...e.data(), id: e.id }
+                    })
+                    resolve(aux.sort((a, b) => { if (a.name < b.name) { return -1 }; if (a.name > b.name) { return 1 }; return 0 }));
                 })
-                return aux.sort((a,b) => {if (a.name < b.name){return -1}; if (a.name > b.name){return 1}; return 0})
-            }))
-        })
+            })
 
         loadProductList.then((database) => {
 

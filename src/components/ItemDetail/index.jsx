@@ -16,9 +16,11 @@ const ItemDetailComponent = ({product}) => {
         addProduct(product.id, product.name, product.price, product.image, product.logo, counterNumber)
 
         setAddedToCart(true)
+
     }
 
     useEffect( () => {
+        
         setCurrentProductID(product.id)
     }, [setCurrentProductID, product.id])
 

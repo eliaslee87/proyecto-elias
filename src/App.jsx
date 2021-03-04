@@ -1,16 +1,20 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+/* import { CartProvider } from './context/CartContext' - Pase el Provider al Index.JS porque no me tomaba el context del estado del modal.*/ 
+import { useContext } from 'react'
+import { CartContext } from './context/CartContext'
+
 import Modal from 'react-modal'
+
 import NavbarComponent from './components/NavBar'
 import ItemListContainer from './containers/ItemListContainer'
 import ItemDetailContainer from './containers/ItemDetailContainer'
 import CartComponent from './components/Cart'
+import CheckoutComponent from './components/Checkout'
+import OrderConfirmationComponent from './components/OrderConfirmation'
 
-/* import { CartProvider } from './context/CartContext' - Pase el Provider al Index.JS porque no me tomaba el context del estado del modal.*/ 
 
-import { useContext } from 'react'
-import { CartContext } from './context/CartContext'
 
 Modal.setAppElement('#root')
 
@@ -23,19 +27,7 @@ function App() {
       <BrowserRouter>
         <NavbarComponent />
 
-        <Modal isOpen={cartModal} onRequestClose={()=> setCartModal(false)} shouldCloseOnOverlayClick={false} style={{
-          overlay: {
-            zIndex: 9999,
-            backgroundColor: 'rgba(0, 0, 0, 0.65)'
-          },
-          content: {
-            top: '2rem',
-            bottom: '2rem',
-            left: '10rem',
-            right:  '10rem',
-            padding:'0px'
-          }
-          }}>
+        <Modal isOpen={cartModal} onRequestClose={()=> setCartModal(false)} shouldCloseOnOverlayClick={false} className="customModal" overlayClassName="customOverlay">
           <CartComponent />
         </Modal>
         
@@ -52,6 +44,12 @@ function App() {
             </Route>
             <Route exact path="/cart">
               <CartComponent />
+            </Route>
+            <Route exact path="/checkout">
+              <CheckoutComponent />
+            </Route>
+            <Route exact path="/confirmacion">
+              <OrderConfirmationComponent />
             </Route>
             <Route path="*">
               <div className="mt-5">

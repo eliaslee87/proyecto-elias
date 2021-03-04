@@ -28,11 +28,47 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/*-- Styles --*/
+
+.customOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 9999;
+}
+
+.customModal {
+  position: absolute;
+  top: 2rem;
+  left: 10rem;
+  right: 10rem;
+  bottom: 2rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 0px;
+}
+
+@media only screen and (max-width: 360px) {
+  .customModal {
+    top: 3rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 1rem;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
 }
