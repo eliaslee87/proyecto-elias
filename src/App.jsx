@@ -13,6 +13,7 @@ import ItemDetailContainer from './containers/ItemDetailContainer'
 import CartComponent from './components/Cart'
 import CheckoutComponent from './components/Checkout'
 import OrderConfirmationComponent from './components/OrderConfirmation'
+import FooterComponent from './components/Footer'
 
 
 
@@ -57,6 +58,8 @@ function App() {
               </div>
             </Route>
           </Switch>
+
+          <FooterComponent />
       </BrowserRouter>
 
   )

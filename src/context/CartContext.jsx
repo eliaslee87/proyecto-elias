@@ -20,6 +20,7 @@ export const CartProvider = ({children}) => {
                     product.quantity = product.quantity + quantity
                 }
             })
+        
     }
 
     const removeProduct = (id) => {
@@ -35,13 +36,17 @@ export const CartProvider = ({children}) => {
     const [orderID, setOrderID] = useState()
     const [buyer, setBuyer] = useState({name: "", email: "", address: "",phone: ""})
 
-    /*-- Local Storage --*/
-/*     useEffect( () => {
+    /*-- Local Storage GET ITEM --*/
+    useEffect( () => {
         if(localStorage.getItem('cart') !== null){
             setCart(JSON.parse(localStorage.getItem('cart')))
             console.log(localStorage.getItem('cart'))
         }
-    },[]) */
+    },[])
+    /*-- Local Storage SET ITEM --*/
+    useEffect( () => {
+        localStorage.setItem('cart',JSON.stringify(cart))
+    }, [cart])
 
 
     return <CartContext.Provider value={{cart, setCart, currentProductID, setCurrentProductID, productExists, addProduct, removeProduct, cartModal, setCartModal, totalProductos, totalFinal, orderID, setOrderID, buyer, setBuyer}}>

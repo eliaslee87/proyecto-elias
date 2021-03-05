@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link, NavLink } from 'react-router-dom'
 import CartWidgetComponent from './../CartWidget'
 
